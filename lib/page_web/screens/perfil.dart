@@ -1,7 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portafolio/page_web/fuctions/openLinks.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Perfil extends StatefulWidget {
   const Perfil({super.key});
@@ -13,12 +12,12 @@ class Perfil extends StatefulWidget {
 }
 
 class _PerfilState extends State<Perfil> {
-  Widget textAnimeted(String text) {
+  Widget textAnimeted(String text, double fontsize) {
     return AnimatedTextKit(
       animatedTexts: [
         TypewriterAnimatedText(
           text,
-          textStyle: const TextStyle(fontWeight: FontWeight.bold),
+          textStyle: TextStyle(fontSize: fontsize, fontWeight: FontWeight.bold),
           speed: const Duration(milliseconds: 150),
         ),
       ],
@@ -45,10 +44,25 @@ class _PerfilState extends State<Perfil> {
         "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png",
   };
 
-  Map<String, String> socialLinks = {
-    "GitHub": "https://github.com/iCris-glich",
-    "LinkedIn": "https://linkedin.com/in/cristhian-muñoz-6894282aa",
-  };
+  List<Map<String, String>> socialLinks = [
+    {
+      "name": "GitHub",
+      "icon":
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png",
+      "link": "https://github.com/iCris-glich",
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "https://cdn-icons-png.flaticon.com/512/174/174857.png",
+      "link": "https://linkedin.com/in/cristhian-muñoz-6894282aa",
+    },
+    {
+      "name": "Facebook",
+      "icon":
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/250px-2021_Facebook_icon.svg.png",
+      "link": "https://www.facebook.com/cristhian.adilm",
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -64,12 +78,14 @@ class _PerfilState extends State<Perfil> {
           ),
         ),
         const SizedBox(height: 20),
-        textAnimeted(("Hola, soy Cristhian.")),
+        textAnimeted(("Hola, soy Cristhian."), 25),
         textAnimeted(
-          "Soy desarrollador de aplicaciones multiplataforma usando dart y flutter.",
+          "Soy desarrol, 25lador de aplicaciones multiplataforma usando dart y flutter.",
+          25,
         ),
         textAnimeted(
-          "Tambien me gusta crear Visual Novels usando Python y Ren'py.",
+          "Tambien me g, 25usta crear Visual Novels usando Python y Ren'py.",
+          25,
         ),
         const SizedBox(height: 20),
         Wrap(
@@ -84,25 +100,19 @@ class _PerfilState extends State<Perfil> {
           }).toList(),
         ),
         const SizedBox(height: 20),
-        const Text("Redes Sociales:", style: TextStyle(fontSize: 30)),
+        textAnimeted("Puedes contactarme en:", 25),
         Wrap(
           alignment: WrapAlignment.center,
           spacing: 10,
           runSpacing: 10,
-          children: socialLinks.entries.map((entry) {
+          children: socialLinks.map((entry) {
             return Tooltip(
-              message: entry.key,
+              message: entry["name"],
               child: InkWell(
                 onTap: () {
-                  openLink(entry.value);
+                  openLink(entry["link"]!);
                 },
-                child: Image.network(
-                  entry.key == "GitHub"
-                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png"
-                      : "https://cdn-icons-png.flaticon.com/512/174/174857.png",
-                  height: 40,
-                  width: 40,
-                ),
+                child: Image.network(entry["icon"]!, height: 40, width: 40),
               ),
             );
           }).toList(),

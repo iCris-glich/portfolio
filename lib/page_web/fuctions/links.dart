@@ -67,8 +67,3 @@ List<Project> projects = [
         "Pagina web hecha con el Flutter de informacion sobre la beca MEXT para jovenes guatemaltecos,\n NO ES OFICIAL.",
   ),
 ];
-
-final List<String> socialLinks = [
-  "https://github.com/iCris-glich",
-  "https://linkedin.com/in/cristhian-muñoz-6894282aa",
-];

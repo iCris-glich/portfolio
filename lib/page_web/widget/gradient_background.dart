@@ -19,12 +19,10 @@ class MouseGradientBackground extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         gradient: RadialGradient(
-          colors: click
-              ? [Colors.orange.withOpacity(0.8), Colors.deepOrange.shade900]
-              : [
-                  const Color.fromARGB(255, 27, 29, 136).withOpacity(0.85),
-                  const Color(0xFF0A192F),
-                ],
+          colors: [
+            const Color.fromARGB(255, 27, 29, 136).withOpacity(0.85),
+            const Color(0xFF0A192F),
+          ],
           center: Alignment(
             (mousePosition.dx / size.width) * 2 - 1,
             (mousePosition.dy / size.height) * 2 - 1,
