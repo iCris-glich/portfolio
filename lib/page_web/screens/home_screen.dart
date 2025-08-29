@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontFamily: 'Agne',
                           color: Colors.white,
                         ),
-                        child: screenWidth > 700
+                        child: screenWidth > 1290
                             ? Row(
                                 children: [
                                   Expanded(

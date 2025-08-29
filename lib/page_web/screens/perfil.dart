@@ -1,5 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:portafolio/page_web/fuctions/openLinks.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Perfil extends StatefulWidget {
   const Perfil({super.key});
@@ -43,6 +45,11 @@ class _PerfilState extends State<Perfil> {
         "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png",
   };
 
+  Map<String, String> socialLinks = {
+    "GitHub": "https://github.com/iCris-glich",
+    "LinkedIn": "https://linkedin.com/in/cristhian-muñoz-6894282aa",
+  };
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -73,6 +80,30 @@ class _PerfilState extends State<Perfil> {
             return Tooltip(
               message: entry.key,
               child: Image.network(entry.value, height: 40, width: 40),
+            );
+          }).toList(),
+        ),
+        const SizedBox(height: 20),
+        const Text("Redes Sociales:", style: TextStyle(fontSize: 30)),
+        Wrap(
+          alignment: WrapAlignment.center,
+          spacing: 10,
+          runSpacing: 10,
+          children: socialLinks.entries.map((entry) {
+            return Tooltip(
+              message: entry.key,
+              child: InkWell(
+                onTap: () {
+                  openLink(entry.value);
+                },
+                child: Image.network(
+                  entry.key == "GitHub"
+                      ? "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/GitHub_Invertocat_Logo.svg/1200px-GitHub_Invertocat_Logo.svg.png"
+                      : "https://cdn-icons-png.flaticon.com/512/174/174857.png",
+                  height: 40,
+                  width: 40,
+                ),
+              ),
             );
           }).toList(),
         ),

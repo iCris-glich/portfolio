@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portafolio/page_web/go_router.dart';
+import 'package:portafolio/page_web/router/go_router.dart';
 
 void main() {
   runApp(Portafolio());
