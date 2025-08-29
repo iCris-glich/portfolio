@@ -2,7 +2,7 @@
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:portafolio/page_web/fuctions/links_projects.dart';
+import 'package:portafolio/page_web/fuctions/links.dart';
 import 'package:portafolio/page_web/screens/projects_cards.dart';
 
 class Rigth extends StatefulWidget {

@@ -44,7 +44,7 @@ List<Project> projects = [
     tech: ["Python", "Renpy"],
     nameProject: "Goodbye Winter (DEMO)",
     description:
-        "Visual Novel creada con el motor grafico Ren'py, Tu eres el protagonista y debes tomar decisiones que afectaran el desarrollo de la historia. Todo se desarrolla en visperas de navidad.",
+        "Visual Novel creada con el motor grafico Ren'py,\n Tu eres el protagonista y debes tomar decisiones que afectaran el desarrollo de la historia.\n Todo se desarrolla en visperas de navidad.",
   ),
   Project(
     imageUrl:
@@ -64,7 +64,7 @@ List<Project> projects = [
     tech: ["Dart", "Flutter"],
     nameProject: "Proyecto MEXT (Beca Japón, solo informacion de la beca))",
     description:
-        "Pagina web hecha con el Flutter de informacion sobre la beca MEXT para jovenes guatemaltecos, NO ES OFICIAL.",
+        "Pagina web hecha con el Flutter de informacion sobre la beca MEXT para jovenes guatemaltecos,\n NO ES OFICIAL.",
   ),
 ];
 

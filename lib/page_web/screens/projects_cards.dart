@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portafolio/page_web/fuctions/links_projects.dart';
+import 'package:portafolio/page_web/fuctions/links.dart';
 import 'package:portafolio/page_web/fuctions/openLinks.dart';
 
 class ProjectCard extends StatefulWidget {
@@ -35,19 +35,7 @@ class _ProjectCardState extends State<ProjectCard> {
       height: 144,
       width: 200,
       margin: const EdgeInsets.only(bottom: 20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: isHovering
-            ? [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 5,
-                  blurRadius: 10,
-                  offset: const Offset(0, 3),
-                ),
-              ]
-            : [],
-      ),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
       child: ClipRRect(borderRadius: BorderRadius.circular(20), child: image),
     );
   }
