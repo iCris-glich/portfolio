@@ -80,11 +80,11 @@ class _PerfilState extends State<Perfil> {
         const SizedBox(height: 20),
         textAnimeted(("Hola, soy Cristhian."), 25),
         textAnimeted(
-          "Soy desarrol, 25lador de aplicaciones multiplataforma usando dart y flutter.",
+          "Soy desarrollador de aplicaciones multiplataforma usando dart y flutter.",
           25,
         ),
         textAnimeted(
-          "Tambien me g, 25usta crear Visual Novels usando Python y Ren'py.",
+          "Tambien me gusta crear Visual Novels usando Python y Ren'py.",
           25,
         ),
         const SizedBox(height: 20),
